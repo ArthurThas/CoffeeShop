@@ -7,7 +7,7 @@ namespace CoffeeShop.Api.Controllers
     [ApiController]
     public class CoffeeController : ControllerBase
     {
-        [HttpGet(Name = "GetTopCoffees")]
+        [HttpGet("Top")]
         public Task<List<string>> GetTopCoffees()
         {
             var coffees = new List<string>
@@ -15,6 +15,21 @@ namespace CoffeeShop.Api.Controllers
                 "Americano",
                 "Machiato",
                 "Latte"
+            };
+
+            return Task.FromResult(coffees);
+        }
+
+        [HttpGet]
+        public Task<List<string>> GetCoffees()
+        {
+            var coffees = new List<string>
+            {
+                "Americano",
+                "Machiato",
+                "Latte",
+                "Mocha",
+                "Brewed"
             };
 
             return Task.FromResult(coffees);
