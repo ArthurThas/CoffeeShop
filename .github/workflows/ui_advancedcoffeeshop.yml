@@ -49,6 +49,7 @@ jobs:
         npm install
         npm run build --if-present
         npm run test --if-present
+      working-directory: ./coffee-shop-ui
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
