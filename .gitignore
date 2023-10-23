@@ -114,7 +114,7 @@ mono_crash.*
 *.sln.docstates
 
 # Microsoft Azure Web App publish settings. Comment if you want to check in web app publish settings, but sensitive information contained in these scripts should be handled via secret variables
-AzureWebApp/publishsettings*
+AzureWebApp/*.publishsettings
 
 # Windows image file caches
 Thumbs.db
