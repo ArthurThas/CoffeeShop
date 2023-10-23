@@ -45,8 +45,14 @@ jobs:
         cache: 'npm'
 
     - name: npm install
-      run: npm install
-      working-directory: ./coffee-shop-ui
+      run: |
+        cd ./coffee-shop-ui
+        if [ -f package-lock.json ]; then
+          npm ci
+        else
+          npm install
+        fi
+      working-directory: ./coffee-shop-ui      
 
     - name: npm build
       run: npm run build --if-present
