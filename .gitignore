@@ -130,3 +130,4 @@ $RECYCLE.BIN/
 # VS Code directories
 .vscode/
 .idea/
+/CoffeeShop.Api/obj
