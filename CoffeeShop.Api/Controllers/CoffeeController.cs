@@ -7,7 +7,7 @@ namespace CoffeeShop.Api.Controllers
     [ApiController]
     public class CoffeeController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet(Name = "GetTopCoffees")]
         public Task<List<string>> GetTopCoffees()
         {
             var coffees = new List<string>
