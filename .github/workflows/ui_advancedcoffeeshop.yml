@@ -5,10 +5,11 @@ name: AdvancedCoffeeShop.UI
 
 on:
   push:
-    paths:
-      - coffee-shop-ui/*
     branches:
       - main
+    paths:
+      - 'coffee-shop-ui/**'
+    
   workflow_dispatch:
 
 jobs:
