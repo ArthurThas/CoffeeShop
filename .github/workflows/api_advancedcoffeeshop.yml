@@ -5,10 +5,10 @@ name: AdvancedCoffeeShop.Api
 
 on:
   push:
-    paths:
-      - CoffeeShop/CoffeeShop.Api/**
     branches:
       - main
+    paths:
+      - CoffeeShop.Api/**
   workflow_dispatch:
 
 jobs:
