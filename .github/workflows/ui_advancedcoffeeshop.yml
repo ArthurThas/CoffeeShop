@@ -34,7 +34,7 @@ jobs:
       - name: Create ZIP Archive
         run: |
           # Create a ZIP archive of the build output
-          7z a -r app-deployment.zip ./coffee-shop-ui
+          7z a -r app-deployment.zip ./coffee-shop-ui/build/*
         working-directory: ${{ github.workspace }}
 
       - name: Upload artifact for deployment job
@@ -63,5 +63,5 @@ jobs:
           app-name: 'AdvancedCoffeeShop'
           slot-name: 'production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_COFFEESHOP }}
-          package: ${{ github.workspace }}/app-deployment.zip
+          package: app-deployment.zip
  
