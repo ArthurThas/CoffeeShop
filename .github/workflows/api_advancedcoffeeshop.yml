@@ -57,5 +57,5 @@ jobs:
         with:
           app-name: 'AdvancedCoffeeShop-Api'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_COFFEESHOP }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_COFFEESHOP_API }}
           package: .
