@@ -28,11 +28,17 @@ jobs:
           npm run test --if-present
         working-directory: ./coffee-shop-ui
 
+      - name: Create ZIP Archive
+        run: |
+          # Create a ZIP archive of the build output
+          7z a -r app-deployment.zip ./coffee-shop-ui
+        working-directory: ${{ github.workspace }}
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: .
+          path: app-deployment.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -54,4 +60,5 @@ jobs:
           app-name: 'AdvancedCoffeeShop'
           slot-name: 'production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_COFFEESHOP }}
-          package: 
+          package: ${{ github.workspace }}/app-deployment.zip
+ 
