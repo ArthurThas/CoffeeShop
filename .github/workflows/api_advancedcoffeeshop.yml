@@ -1,10 +1,12 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core Web Api to Azure Web App - AdvancedCoffeeShop
+name: AdvancedCoffeeShop.Api
 
 on:
   push:
+    paths:
+      - CoffeeShop.Api/*
     branches:
       - main
   workflow_dispatch:
@@ -24,7 +26,7 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
-        working-directory: ./CoffeeShop.Api
+        working-directory: ./CoffeeShop.Api  
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/coffeeshop.api
@@ -40,7 +42,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -53,7 +55,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'AdvancedCoffeeShop'
-          slot-name: 'Production'
+          app-name: 'AdvancedCoffeeShop-Api'
+          slot-name: 'production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_COFFEESHOP }}
           package: .
