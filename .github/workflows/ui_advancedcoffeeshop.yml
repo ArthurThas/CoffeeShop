@@ -17,7 +17,7 @@
 # For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
 
-name: Build and deploy React App to Azure Web App - AdvancedCoffeeShop
+name: AdvancedCoffeeShop.UI
 
 on:
   push:
@@ -27,7 +27,7 @@ on:
 env:
   AZURE_WEBAPP_NAME: 'AdvancedCoffeeShop'     # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '14.x'                # set this to the node version to use
+  NODE_VERSION: '18.x'                # set this to the node version to use
 
 permissions:
   contents: read
@@ -45,13 +45,7 @@ jobs:
         cache: 'npm'
 
     - name: npm install
-      run: |
-        cd ./coffee-shop-ui
-        if [ -f package-lock.json ]; then
-          npm ci
-        else
-          npm install
-        fi
+      run: npm install
       working-directory: ./coffee-shop-ui      
 
     - name: npm build
