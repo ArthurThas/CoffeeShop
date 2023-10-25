@@ -29,7 +29,8 @@ namespace CoffeeShop.Api.Controllers
                 "Machiato",
                 "Latte",
                 "Mocha",
-                "Brewed"
+                "Brewed",
+                "Matcha"
             };
 
             return Task.FromResult(coffees);
