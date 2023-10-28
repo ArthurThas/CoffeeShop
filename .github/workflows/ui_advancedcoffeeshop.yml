@@ -34,7 +34,7 @@ jobs:
       - name: Create ZIP Archive
         run: |
           # Create a ZIP archive of the build output
-          7z a -r app-deployment.zip ./coffee-shop-ui/build/*
+          7z a -r app-deployment.zip ./coffee-shop-ui/dist/*
         working-directory: ${{ github.workspace }}
 
       - name: Upload artifact for deployment job
