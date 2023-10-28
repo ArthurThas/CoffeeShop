@@ -1,12 +1,5 @@
 import axios, {type AxiosInstance, type AxiosRequestConfig} from 'axios'
 
-//extend axios AxiosRequestConfig with custom prop
-declare module 'axios' {
-    export interface AxiosRequestConfig {
-        disableLoading?: boolean;
-    }
-}
-
 //create axios instance so we can share config/logic globally
 export const createClient = (clientConfig: AxiosRequestConfig = {}): AxiosInstance => {
     const client = axios.create(clientConfig);
