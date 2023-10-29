@@ -9,7 +9,11 @@ on:
       - main
     paths:
       - 'coffee-shop-ui/**'
-    
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'coffee-shop-ui/**'  
   workflow_dispatch:
 
 jobs:
