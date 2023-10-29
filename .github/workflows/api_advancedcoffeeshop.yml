@@ -9,6 +9,11 @@ on:
       - main
     paths:
       - 'CoffeeShop.Api/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'CoffeeShop.Api/**'
   workflow_dispatch:
 
 jobs:
