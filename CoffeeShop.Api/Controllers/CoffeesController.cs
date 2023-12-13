@@ -5,7 +5,7 @@ namespace CoffeeShop.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CoffeeController : ControllerBase
+    public class CoffeesController : ControllerBase
     {
         [HttpGet("Top")]
         public Task<List<string>> GetTopCoffees()
@@ -21,7 +21,7 @@ namespace CoffeeShop.Api.Controllers
         }
 
         [HttpGet]
-        public Task<List<string>> GetCoffees()
+        public async Task<List<string>> GetCoffees()
         {
             var coffees = new List<string>
             {
@@ -32,7 +32,7 @@ namespace CoffeeShop.Api.Controllers
                 "Brewed"
             };
 
-            return Task.FromResult(coffees);
+            return await Task.FromResult(coffees);
         }
     }
 }

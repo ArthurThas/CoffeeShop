@@ -1,6 +1,5 @@
-import { APP_CONFIG } from "@constants";
 import { createClient } from "./common/client";
 
 export const coffeeShopApiClient = createClient({
-    baseURL: `${APP_CONFIG.CoffeeShopApiBaseUri}/api`
+    baseURL: `${import.meta.env.VITE_CoffeeShop_Api_BaseUri}/api`
 });
