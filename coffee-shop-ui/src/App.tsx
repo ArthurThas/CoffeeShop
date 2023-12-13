@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <div>
+        {import.meta.env.VITE_CoffeeShop_Api_BaseUri}
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
